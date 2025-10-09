@@ -1,0 +1,47 @@
+# Віртуальне середовище
+venv/
+ENV/
+env/
+.venv/
+
+# Кеші Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Файли середовища
+.env
+.env.*
+
+# Логи
+*.log
+
+# Файли бази даних SQLite (якщо будеш використовувати)
+*.sqlite3
+
+# IDE / редактори
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Файли системи
+.DS_Store
+Thumbs.db
+
+# Файли пакувальників
+*.egg-info/
+dist/
+build/
+
+# Файли компіляції Cython, C тощо
+*.so
+*.dylib
+*.pyd
+
+# Тимчасові файли
+*.tmp
+*.temp
+
+# Профілі Python
+.prof
