@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-center">
+    <img src="{{ url_for('static', filename='images/my_photo.jpg') }}" alt="Фото" class="rounded-circle" width="150">
+    <h1 class="mt-3">Раковецький Дмитро</h1>
+    <p>Python розробник</p>
+</section>
+
+<section>
+    <h2>Про себе</h2>
+    <p>Маю досвід у розробці вебзастосунків на Flask і Django...</p>
+</section>
+
+<section>
+    <h2>Освіта</h2>
+    <p>Національний університет — Комп’ютерні науки</p>
+</section>
+
+<section>
+    <h2>Навички</h2>
+    <ul>
+        <li>Python</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Flask, Django</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Проекти</h2>
+    <p>Створив кілька навчальних сайтів і REST API.</p>
+</section>
+{% endblock %}
