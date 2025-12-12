@@ -4,10 +4,8 @@ from flask import render_template, request, redirect, url_for, flash, session
 from app import app
 from app.forms import ContactForm, LoginForm
 
-# Фіксовані креденшали (заглушка)
 VALID_USER = {"username": "admin", "password": "1234"}
 
-# Окремий логер для контактів
 contact_logger = logging.getLogger("contact")
 if not contact_logger.handlers:
     Path("logs").mkdir(exist_ok=True)
@@ -25,7 +23,6 @@ def home():
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
-        # Обробка валідної форми (POST) -> логування + PRG
         name = form.name.data.strip()
         email = form.email.data.strip()
         message = form.message.data.strip()
@@ -33,16 +30,13 @@ def contact():
         try:
             contact_logger.info("Contact form: name=%s, email=%s, msg_len=%d", name, email, len(message))
             flash(f"✅ Повідомлення надіслано успішно для {name} <{email}>.", "success")
-            # Зберігаємо останнє відправлення у сесію для відображення на GET
             session["last_contact"] = {"name": name, "email": email, "message": message}
         except Exception as e:
             app.logger.exception("Помилка запису у лог: %s", e)
             flash("❌ Сталася помилка при записі повідомлення. Спробуйте ще раз.", "danger")
 
-        # Post/Redirect/Get
         return redirect(url_for("contact"))
 
-    # GET або невалідний POST -> показати форму з помилками (HTML-валидація вимкнена)
     last = session.get("last_contact")
     return render_template("contact.html", title="Контакти", form=form, last=last)
 
