@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #fafafa; color: #222; }
+.nav { display: flex; gap: 12px; padding: 12px 16px; background: #111; }
+.nav a { color: #eee; text-decoration: none; padding: 6px 10px; }
+.nav a.right { margin-left: auto; }
+.container { max-width: 900px; padding: 16px; margin: 0 auto; }
+.flash-container { margin: 12px 16px; }
+.flash { padding: 10px 12px; border-radius: 8px; margin-bottom: 8px; }
+.flash.success { background: #d1fadd; color: #063d1e; }
+.flash.info { background: #d9ecff; color: #063063; }
+.flash.warning { background: #fff4cc; color: #4d3b00; }
+.flash.danger { background: #ffe0e0; color: #5f0000; }
+.form-row { display: flex; flex-direction: column; margin-bottom: 12px; }
+label { font-weight: 600; margin-bottom: 6px; }
+.input { padding: 10px 12px; border-radius: 8px; border: 1px solid #ccc; }
+.errors { margin: 6px 0 0; padding-left: 18px; color: #a40000; }
+.table { width: 100%; border-collapse: collapse; margin-top: 12px; background: #fff; }
+.table th, .table td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+.pre { white-space: pre-wrap; word-wrap: break-word; margin: 0; }

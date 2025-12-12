@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% block content %}
+<h2>Контактна форма</h2>
+
+<form method="POST" novalidate>
+  {{ form.csrf_token }}
+  {{ render_field(form.name) }}
+  {{ render_field(form.email) }}
+  {{ render_field(form.message) }}
+  {{ render_field(form.submit) }}
+</form>
+
+{% if last %}
+  <h3>Останнє відправлення (PRG приклад)</h3>
+  <table class="table">
+    <tr><th>Ім'я</th><td>{{ last.name }}</td></tr>
+    <tr><th>Email</th><td>{{ last.email }}</td></tr>
+    <tr><th>Повідомлення</th><td><pre class="pre">{{ last.message }}</pre></td></tr>
+  </table>
+{% endif %}
+{% endblock %}

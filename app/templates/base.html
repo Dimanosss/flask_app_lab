@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ title or "Lab 5" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="{{ url_for('home') }}">Головна</a>
+    <a href="{{ url_for('contact') }}">Контакти</a>
+    <a href="{{ url_for('login') }}">Вхід</a>
+    <a href="{{ url_for('profile') }}">Профіль</a>
+    {% if session.get('username') %}
+      <a class="right" href="{{ url_for('logout') }}">Вийти</a>
+    {% endif %}
+  </nav>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-container">
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message|safe }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

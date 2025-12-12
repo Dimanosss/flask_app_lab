@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% block content %}
+<h2>Вхід</h2>
+
+<form method="POST" novalidate>
+  {{ form.csrf_token }}
+  {{ render_field(form.username) }}
+  {{ render_field(form.password) }}
+  {{ render_field(form.remember) }}
+  {{ render_field(form.submit) }}
+</form>
+
+{% if last %}
+  <h3>Остання спроба входу</h3>
+  <table class="table">
+    <tr><th>Username/Email</th><td>{{ last.username }}</td></tr>
+    <tr><th>Запам'ятати</th><td>{{ last.remember }}</td></tr>
+  </table>
+{% endif %}
+{% endblock %}
