@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Вітаємо, {{ username }}!</h2>
+<div class="theme-buttons">
+  <a href="{{ url_for('set_theme', scheme='light') }}">Світла тема</a> |
+  <a href="{{ url_for('set_theme', scheme='dark') }}">Темна тема</a>
+</div>
+{% if color_scheme == 'dark' %}
+  <style>body { background-color: #111; color: #eee; }</style>
+{% endif %}
+<h3>Управління Cookies</h3>
+<form action="{{ url_for('add_cookie') }}" method="POST">
+  <input type="text" name="key" placeholder="Ключ">
+  <input type="text" name="value" placeholder="Значення">
+  <button type="submit">Додати</button>
+</form>
+<form action="{{ url_for('delete_cookie') }}" method="POST">
+  <input type="text" name="key" placeholder="Ключ (порожньо = всі)">
+  <button type="submit">Видалити</button>
+</form>
+<table border="1" cellpadding="5">
+  <tr><th>Ключ</th><th>Значення</th></tr>
+  {% for k, v in cookies.items() %}
+    <tr><td>{{ k }}</td><td>{{ v }}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
