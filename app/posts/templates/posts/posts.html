@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Posts</h1>
+<a href="{{ url_for('posts.create_post') }}" class="btn btn-primary mb-3">Add</a>
+{% for p in posts %}
+<div class="card mb-3"><div class="card-body">
+<h5>{{p.title}}</h5>
+<p>{{ p.content[:100] }}...</p>
+<a href="{{ url_for('posts.detail_post', id=p.id) }}">Read more</a>
+</div></div>
+{% endfor %}
+{% endblock %}

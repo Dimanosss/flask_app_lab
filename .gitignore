@@ -1,0 +1,38 @@
+# Віртуальне середовище
+venv/
+env/
+
+# Файли Python кешу
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Налаштування IDE / редакторів
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Системні файли
+.DS_Store
+Thumbs.db
+
+# Файли середовища або конфігурацій
+.env
+*.env
+
+# Логи
+*.log
+
+# Файли компіляції чи тестів
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# Flask специфічні тимчасові файли
+instance/
+*.db
+*.sqlite3

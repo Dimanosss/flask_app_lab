@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+<a class="btn btn-primary" href="{{ url_for('posts.update_post', id=post.id) }}">Edit</a>
+<a class="btn btn-danger" href="{{ url_for('posts.delete_post', id=post.id) }}">Delete</a>
+{% endblock %}
