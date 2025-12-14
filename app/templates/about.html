@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-10">
+        <h1 class="mb-3">Про проект</h1>
+        <p>Це навчальний проект Lab3, створений на Flask з використанням блюпринтів.</p>
+        
+        <h3>Структура проекту</h3>
+        <ul>
+            <li><strong>app/</strong> - основна папка додатку</li>
+            <li><strong>app/users/</strong> - блюпринт користувачів з префіксом /users</li>
+            <li><strong>app/products/</strong> - блюпринт продуктів з префіксом /products</li>
+            <li><strong>app/templates/</strong> - шаблони Jinja2</li>
+            <li><strong>app/static/</strong> - статичні файли (CSS, JS, зображення)</li>
+            <li><strong>tests/</strong> - тести для блюпринтів</li>
+        </ul>
+
+        <h3>Функціональність</h3>
+        <ul>
+            <li>Блюпринт users з маршрутами /hi/&lt;name&gt; та /admin</li>
+            <li>Блюпринт products зі списком продуктів та деталями</li>
+            <li>Шаблони з наслідуванням base.html</li>
+            <li>Вертикальне меню на сторінці hi.html</li>
+            <li>Тести для обох блюпринтів</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+

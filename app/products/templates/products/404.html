@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1>404</h1>
+        <h2>Продукт не знайдено</h2>
+        <p>Вибачте, але продукт з таким ID не існує.</p>
+        <a href="{{ url_for('products.list_products') }}" class="btn btn-primary">
+            Повернутися до списку продуктів
+        </a>
+    </div>
+</div>
+{% endblock %}
+

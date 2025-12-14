@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Віртуальне середовище
+venv/
+env/
+ENV/
+.venv/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Файли налаштувань OS
+.DS_Store
+Thumbs.db
+
+# Логи та тимчасові файли
+*.log
+*.tmp
+
+# Секретні файли
+*.env
+.env
+
+# Модулі
+*.egg-info/
+dist/
+build/
+
+# Pytest cache
+.pytest_cache/

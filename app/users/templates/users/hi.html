@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <!-- Вертикальне меню -->
+        <div class="vertical-menu">
+            <h5 class="mb-3">Меню користувачів</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('users.hi', name=name) }}">
+                        Привітання
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('users.admin') }}">
+                        Адмін панель
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">
+                        Головна
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('products.list_products') }}">
+                        Продукти
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="welcome-card">
+            <h1>Привіт, {{ name }}!</h1>
+            <p>Ласкаво просимо на сторінку користувачів.</p>
+            <p>Ви можете перейти до адмін панелі або повернутися на головну сторінку.</p>
+            <div class="mt-3">
+                <a href="{{ url_for('users.admin') }}" class="btn btn-primary me-2">Адмін панель</a>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">Головна</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

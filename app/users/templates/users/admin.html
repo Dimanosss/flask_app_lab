@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-3">
+        <!-- Вертикальне меню -->
+        <div class="vertical-menu">
+            <h5 class="mb-3">Меню користувачів</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('users.hi', name='Адмін') }}">
+                        Привітання
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('users.admin') }}">
+                        Адмін панель
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">
+                        Головна
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('products.list_products') }}">
+                        Продукти
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="admin-panel">
+            <h1 class="mb-3">Адміністративна панель</h1>
+            <p>Ласкаво просимо до адмін панелі. Тут ви можете керувати системою.</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Користувачі</h5>
+                            <p class="card-text">Управління користувачами системи</p>
+                            <a href="{{ url_for('users.hi', name='Адмін') }}" class="btn btn-sm btn-primary">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Продукти</h5>
+                            <p class="card-text">Управління каталогом продуктів</p>
+                            <a href="{{ url_for('products.list_products') }}" class="btn btn-sm btn-primary">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

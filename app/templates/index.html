@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-3">Ласкаво просимо до Lab3!</h1>
+        <p>Це Flask-додаток з блюпринтами для користувачів та продуктів.</p>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Користувачі</h5>
+                <p class="card-text">Перегляньте сторінки користувачів та адмін панель.</p>
+                <a href="{{ url_for('users.hi', name='Гість') }}" class="btn btn-primary">Перейти до користувачів</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Продукти</h5>
+                <p class="card-text">Перегляньте каталог продуктів та їх деталі.</p>
+                <a href="{{ url_for('products.list_products') }}" class="btn btn-primary">Перейти до продуктів</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
