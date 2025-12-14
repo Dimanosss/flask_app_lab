@@ -1,0 +1,317 @@
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #495057;
+    min-height: 100vh;
+}
+
+.resume-container {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.left-column {
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+}
+
+.left-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+.left-column img {
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-column img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.left-column h3 {
+    color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.left-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #e9ecef;
+    text-align: left;
+}
+
+.contact-info li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.contact-info li:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-left-color: #667eea;
+    transform: translateX(5px);
+}
+
+.contact-info i {
+    margin-right: 12px;
+    color: #667eea;
+    width: 22px;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    color: #e9ecef;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.skills-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.right-column {
+    padding: 60px 50px;
+    background: #ffffff;
+}
+
+.right-column h1 {
+    color: #2c3e50;
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.right-column .lead {
+    color: #6c757d;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.right-column h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, #667eea 0%, #764ba2 100%) 1;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    margin-top: 35px;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.right-column h2 i {
+    margin-right: 15px;
+    color: #667eea;
+    font-size: 1.4rem;
+}
+
+.right-column p {
+    line-height: 1.8;
+    color: #495057;
+    font-size: 1.05rem;
+}
+
+.right-column section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.right-column a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.right-column a:hover {
+    color: #764ba2;
+    border-bottom-color: #764ba2;
+}
+
+/* --- (НОВИЙ БЛОК 1) Стилі для простих сторінок (Логін, Контакти, Форми) --- */
+/* Цей стиль НЕ буде застосовано до твого резюме */
+.content-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0; /* Зробимо рамку замість тіні, щоб відрізнялось */
+    border-radius: 8px;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 800px;
+}
+
+/* --- (НОВИЙ БЛОК 2) Стилі для кнопок (використовуємо твій синій колір) --- */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #f0f0f0;
+}
+
+.dark-mode .resume-container {
+    background: linear-gradient(145deg, #2b2b3d 0%, #1e1e2e 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .card,
+.dark-mode .content-card {
+    background-color: #2b2b3d;
+    border-color: #444;
+}
+
+.dark-mode .card-title, .dark-mode h1, .dark-mode h2, .dark-mode h4,
+.dark-mode .right-column h1, .dark-mode .right-column .lead,
+.dark-mode .content-card h1 {
+    color: #ffffff;
+}
+
+.dark-mode .left-column {
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dark-mode .right-column {
+    background: #2b2b3d;
+}
+
+.dark-mode .right-column h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark-mode .right-column p {
+    color: #e9ecef;
+}
+
+.dark-mode .skills-list li {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+.dark-mode .contact-info, .dark-mode .left-column h3 {
+    color: #e9ecef;
+}
+
+.dark-mode .table {
+    color: #f0f0f0;
+}
+
+.dark-mode .table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: rgba(255, 255, 255, 0.05);
+}
+/* --- Стилі для форми постів --- */
+.multiple-select-custom {
+    border-radius: 0.5rem;
+    background-color: #fdfdfd;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #6f42c1; /* Фіолетовий колір для активного лейблу */
+    opacity: 0.8;
+}
+
+.content-card h2 {
+    font-weight: 700;
+}

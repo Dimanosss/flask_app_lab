@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% import "macros/form_macros.html" as rf %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="content-card">
+            <h1 class="text-center">Login</h1>
+            <hr>
+
+            <form action="{{ url_for('users.login') }}" method="POST" novalidate>
+
+                {{ form.hidden_tag() }}
+
+                {{ rf.render_field(form.username) }}
+                {{ rf.render_field(form.password) }}
+
+                <div class="mb-3 form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label") }}
+                </div>
+
+                {{ form.submit(class="btn btn-primary w-100") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

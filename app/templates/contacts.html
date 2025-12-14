@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "macros/form_macros.html" as rf %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="content-card">
+            <h1>Contact Me</h1>
+            <p class="text-muted">Please fill out the form below.</p>
+            <hr>
+
+            <<form action="{{ url_for('main.contacts') }}" method="POST" novalidate>
+
+                {{ form.hidden_tag() }}
+
+                {{ rf.render_field(form.name) }}
+                {{ rf.render_field(form.email) }}
+                {{ rf.render_field(form.phone) }}
+                {{ rf.render_field(form.subject) }}
+                {{ rf.render_field(form.message) }}
+
+                {{ form.submit(class="btn btn-primary") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

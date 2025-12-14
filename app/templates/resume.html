@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}My Resume{% endblock %}
+
+{% block content %}
+<div class="resume-container">
+    <div class="row">
+        <div class="col-md-4 left-column">
+            <img src="{{ url_for('static', filename='images/photo.jpg') }}" alt="My Photo" class="img-fluid rounded-circle mb-4">
+
+            <section class="mb-4">
+                <h3>Contact</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> dmytro.rakovetskyi.23@pnu.edu.ua</li>
+                    <li><i class="fas fa-phone"></i> +380661027461</li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com/Dimanosss" target="_blank" class="text-decoration-none">github.com/Dimanosss</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Skills</h3>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>SQLAlchemy</li>
+                    <li>Flask-Migrate</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>Bootstrap</li>
+                    <li>Git & GitHub</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="col-md-8 right-column">
+            <h1>Раковецький Дмитро</h1>
+            <p class="lead">Software Engineering Student</p>
+
+            <section class="mb-4">
+                <h2><i class="fas fa-user-alt"></i> About Me</h2>
+                <p>
+                    Студент факультету математики та інформатики Прикарпатського національного університету імені Василя Стефаника, спеціальність "Інженерія програмного забезпечення". Активно вивчаю сучасні технології веб-розробки, працюю з Flask, SQLAlchemy та іншими інструментами для створення повнофункціональних веб-додатків. Захоплююся програмуванням та постійно розвиваю свої навички через практичні проекти та лабораторні роботи.
+                </p>
+            </section>
+
+            <section class="mb-4">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <p><strong>Vasyl Stefanyk Carpathian National University</strong> | Software engineering | 2023 - 2027</p>
+            </section>
+
+            <section class="mb-4">
+                <h2><i class="fas fa-briefcase"></i> Projects</h2>
+                <p>
+                    <strong>Flask Web Applications:</strong> Серія лабораторних робіт з веб-розробки на Flask, що включають роботу з базами даних через SQLAlchemy, створення RESTful API, реалізацію аутентифікації користувачів та багато іншого. Проекти демонструють розуміння архітектури веб-додатків, роботи з ORM та міграціями бази даних.
+                </p>
+                <p>
+                    <strong>Technologies:</strong> Python, Flask, SQLAlchemy, Flask-Migrate, HTML5, CSS3, Bootstrap, Git.
+                </p>
+                <p>
+                    <a href="https://github.com/Dimanosss" target="_blank" class="btn btn-outline-primary mt-2">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </p>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
