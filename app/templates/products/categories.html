@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Категорії та продукти</h1>
+
+{% for category in categories %}
+<div class="card mb-4">
+    <div class="card-header">
+        <h3>{{ category.name }}</h3>
+    </div>
+    <div class="card-body">
+        {% if category.products %}
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Назва</th>
+                    <th>Ціна</th>
+                    <th>Активний</th>
+                    <th>Дата створення</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in category.products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ "%.2f"|format(product.price) }} ₴</td>
+                    <td>
+                        {% if product.active %}
+                            <span class="badge bg-success">Так</span>
+                        {% else %}
+                            <span class="badge bg-secondary">Ні</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ product.created_at.strftime('%Y-%m-%d %H:%M:%S') if product.created_at else 'N/A' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-muted">Продуктів у цій категорії немає</p>
+        {% endif %}
+    </div>
+</div>
+{% else %}
+<div class="alert alert-info">Категорій не знайдено</div>
+{% endfor %}
+{% endblock %}
+
